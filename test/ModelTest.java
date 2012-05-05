@@ -1,17 +1,14 @@
-import org.junit.*;
+import static org.fest.assertions.Assertions.assertThat;
+import static play.test.Helpers.fakeApplication;
+import static play.test.Helpers.running;
 
-import java.util.*;
+import java.util.Date;
+import java.util.List;
 
-import play.mvc.*;
-import play.test.*;
-import play.libs.F.*;
+import models.Answer;
+import models.Question;
 
-import static play.test.Helpers.*;
-import static org.fest.assertions.Assertions.*;
-
-import models.*;
-
-import com.avaje.ebean.*;
+import org.junit.Test;
 
 public class ModelTest {
     
@@ -25,9 +22,21 @@ public class ModelTest {
            public void run() {
                Question macintosh = Question.find.byId(1l);
                assertThat(macintosh.title).isEqualTo("Macintosh");
-               assertThat(formatted(macintosh.publish_date)).isEqualTo("1984-01-24");
+               assertThat(formatted(macintosh.publish_date)).isEqualTo("1991-01-01");
            }
         });
+    }
+
+    @Test
+    public void findAnswer(){
+    	running(fakeApplication(), new Runnable(){
+    		public void run(){
+    			Question quest = Question.find.byId(1l);
+    			List<Answer> ans = quest.answers;
+    			assertThat(ans.size()>0);
+    			
+    		}
+    	});
     }
     
 }
