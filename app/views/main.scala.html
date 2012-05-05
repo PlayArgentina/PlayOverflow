@@ -16,9 +16,19 @@
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">  
       <div class="container">  
-        <a class="brand"href="@routes.Application.index()">
+        <a class="brand"href="@routes.Questions.index()">
           PlayOverflow!
         </a>
+        <ul class="navbar-collapse">
+          <ul class="nav pull-right">
+            @if(getCurrentUser() == null) {
+              <li><a href="@routes.Users.login()">Login</a></li>  
+              <li><a href="@routes.Users.signUp()">Sign up</a></li>
+            } else {
+              <li><a href="@routes.Users.doLogout()" class="js-logout-btn">Logout</a></li>  
+            }
+          </ul>
+        </ul>
       </div>
     </div>
   </div>
