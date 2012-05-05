@@ -24,14 +24,12 @@
 
    @for(answer <- question.answers) {
    
-   
-   
    <div class='well' style="border-radius:10px;">
    <button class="close" style="height:64px;"><span class="badge badge-success">Votes @answer.votes</span></button>
 	Posted by: <span class="label label-info">@answer.user.getUsername</span>
 	<hr/>
 	<p>@answer.description</p>
-	<button class="btn btn-success">Vote +1</button>
+	<button href="@routes.Questions.voteAnswer(answer.id.toString())" class="btn btn-success js_vote">Vote +1</button>
 
 	
 </div>

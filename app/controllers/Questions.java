@@ -1,8 +1,9 @@
 package controllers;
 
+import java.util.Map;
+
 import models.Answer;
 import models.Question;
-import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -34,6 +35,13 @@ public class Questions extends Controller {
 		
 		answeForm.get().save();
 		return redirect(routes.Questions.showQuestion(answeForm.get().question.id.toString()));
+	}
+	
+	public static Result voteAnswer(String answerId) {
+	   Answer  answer = Answer.find.byId(Long.valueOf(answerId));
+	   answer.votes +=1;
+	   answer.save();
+	return 	ok();
 	}
 	
 	
