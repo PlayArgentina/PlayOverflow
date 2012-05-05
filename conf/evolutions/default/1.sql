@@ -14,8 +14,8 @@ create table questions (
 
 create table users (
   id                        bigint not null,
-  username                      varchar(255),
-  password                timestamp,
+  username                  varchar(255),
+  password                	varchar(255),
   constraint pk_users primary key (id))
 ;
 
