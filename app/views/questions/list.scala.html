@@ -19,7 +19,7 @@
 	   	 <tbody>
    @for(question <- questionList) {
 	   		<tr>	 
-	   			<td>@question.answers.size()</td>
+	   			<td><span class="badge">@question.answers.size()</span></td>
 	   			<td></td>
 	   			<td>
             <a href="@routes.Questions.showQuestion(question.id.toString())">

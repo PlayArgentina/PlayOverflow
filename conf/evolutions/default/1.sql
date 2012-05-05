@@ -14,7 +14,7 @@ create table question (
 
 create table answer (
   id                        bigint not null,
-  description               varchar(255),
+  description               varchar(2000),
   user_id                   bigint not null,
   question_id				bigint not null,
   constraint pk_answer primary key (id))
