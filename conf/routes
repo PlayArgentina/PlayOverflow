@@ -7,8 +7,8 @@ GET     /                           controllers.Questions.index()
 
 # User login/signup page
 GET     /users                      controllers.Users.list()
-GET     /signUp                     controllers.Users.signUp()
-POST    /signUp                     controllers.Users.doSignUp()
+GET     /signup                     controllers.Users.signUp()
+POST    /signup                     controllers.Users.doSignUp()
 GET     /login                      controllers.Users.login()
 POST    /login                      controllers.Users.doLogin()
 POST    /logout                     controllers.Users.doLogout()

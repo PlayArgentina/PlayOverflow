@@ -1,16 +1,15 @@
 @(userForm: Form[User])
 
 @import helper._
+@import helper.twitterBootstrap._
 
 @main("Sign up") {
     
     <h1>Sign up</h1>
     
-    @form(routes.Users.doSignUp()) {
-        <fieldset>
+    @form(routes.Users.doSignUp(), 'class -> "well form-inline") {
             @inputText(userForm("username"), '_label -> "User name")
             @inputText(userForm("password"), '_label -> "User password")
-        </fieldset>
         
         <div class="actions">
             <input type="submit" value="Create User " class="btn primary"> or 
