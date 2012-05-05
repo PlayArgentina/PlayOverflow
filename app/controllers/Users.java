@@ -1,14 +1,8 @@
 package controllers;
 
-import java.util.*;
-
-import play.mvc.*;
-import play.data.*;
-import play.*;
-
-import views.html.*;
-
 import models.*;
+import play.data.*;
+import play.mvc.*;
 
 public class Users extends Controller {
   private static Form<User> localForm = form(User.class);
