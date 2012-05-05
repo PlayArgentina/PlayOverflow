@@ -22,11 +22,11 @@ public class ModelTest {
            public void run() {
                Question macintosh = Question.find.byId(1l);
                assertThat(macintosh.title).isEqualTo("Macintosh");
-               assertThat(formatted(macintosh.publish_date)).isEqualTo("1984-01-24");
+               assertThat(formatted(macintosh.publish_date)).isEqualTo("1991-01-01");
            }
         });
     }
-    /*
+
     @Test
     public void findAnswer(){
     	running(fakeApplication(), new Runnable(){
@@ -38,6 +38,5 @@ public class ModelTest {
     		}
     	});
     }
-    */
     
 }

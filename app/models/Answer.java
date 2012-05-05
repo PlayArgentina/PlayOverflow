@@ -2,6 +2,7 @@ package models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import play.data.validation.Constraints;
@@ -17,6 +18,11 @@ public class Answer extends Model{
 	public String description;
 	
 	@ManyToOne
+	@JoinColumn(name = "question_id", referencedColumnName="id")
+	public Question question;
+	
+	@ManyToOne
+	@JoinColumn(name = "user_id", referencedColumnName="id")
 	public User user;
 	
 	public static Model.Finder<Long,Answer> find = new Model.Finder<Long,Answer>(Long.class, Answer.class);

@@ -13,12 +13,12 @@ insert into question (id,title,description,tags,user_id, publish_date) values ( 
 insert into question (id,title,description,tags,user_id, publish_date) values (  7,'MOS Technology','App fixture description','fixure',1, '1987-01-01');
 insert into question (id,title,description,tags,user_id, publish_date) values (  8,'Micro Instrumentation and Telemetry Systems','App fixture description','fixure',1,'1991-01-20');
 
-insert into answer (id,description,user_id) values (  1,'App fixture answer',2);
+insert into answer (id,description,user_id, question_id) values (  1,'App fixture answer',2,1);
 
 
 # --- !Downs
 
-
+delete from answer
 
 delete from question;
 
