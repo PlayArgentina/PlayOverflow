@@ -14,9 +14,9 @@ create table question (
 
 create table user (
   id                        bigint not null,
-  username                      varchar(255),
-  password                varchar(255),
-  constraint pk_user primary key (id))
+  username                  varchar(255),
+  password                	varchar(255),
+  constraint pk_users primary key (id))
 ;
 
 create sequence questions_seq start with 1000;

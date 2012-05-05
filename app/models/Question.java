@@ -31,7 +31,7 @@ public class Question extends Model {
     public String tags;
     
     @ManyToOne(optional = false)
-    @JoinColumn(name = "userId", referencedColumnName="id")
+    @JoinColumn(name = "user_id", referencedColumnName="id")
     public User questionOwner;
     @Formats.DateTime(pattern="yyyy-MM-dd")
     public Date publish_date;
