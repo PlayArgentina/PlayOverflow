@@ -5,10 +5,11 @@
 # Home page
 GET     /                           controllers.Application.index()
 
-# Login page
+# User login/signup page
+GET     /signUp                     controllers.Users.signUp()
+POST    /signUp                     controllers.Users.doSignUp()
 GET     /login                      controllers.Users.login()
 POST    /login                      controllers.Users.doLogin()
-GET     /logout                     controllers.Users.logout()
 POST    /logout                     controllers.Users.doLogout()
 
 
