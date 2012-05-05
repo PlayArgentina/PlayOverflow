@@ -18,7 +18,7 @@ insert into answer (id,description,user_id, question_id) values (  1,'App fixtur
 
 # --- !Downs
 
-delete from answer
+delete from answer;
 
 delete from question;
 

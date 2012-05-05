@@ -1,9 +1,12 @@
-@(content: Html)
+@(title : String)(content: Html)
+
+@import helpers.ApplicationHelper._
+
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Computers database</title>
+        <title>@title</title>
         <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")"> 
         <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")"> 
     </head>
@@ -18,10 +21,10 @@
         </header>
         
         <section id="main">
-            @if(controllers.Application.getCurrentUser() != null) {
-    		@controllers.Application.getCurrentUser().username
-    	}
-        @content
+            
+          		@getCurrentUser()
+
+          @content
         </section>
         
     </body>
