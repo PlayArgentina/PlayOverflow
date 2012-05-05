@@ -4,7 +4,7 @@
 insert into user (id,username,password) values (  1,'derfarg','123456');
 insert into user (id,username,password) values (  2,'marcosnils','123456');
 
-insert into question (id,title,description,tags,user_id, publish_date) values (  1,'Apple Inc.','App fixture description','fixure',1, '1991-01-01');
+insert into question (id,title,description,tags,user_id, publish_date) values (  1,'Macintosh','App fixture description','fixure',1, '1991-01-01');
 insert into question (id,title,description,tags,user_id, publish_date) values (  2,'Thinking Machines','App fixture description','fixure',1, '2011-01-01');
 insert into question (id,title,description,tags,user_id, publish_date) values (  3,'RCA','App fixture description','fixure',1, '2091-01-01');
 insert into question (id,title,description,tags,user_id, publish_date) values (  4,'Netronics','App fixture description','fixure',1, null);
