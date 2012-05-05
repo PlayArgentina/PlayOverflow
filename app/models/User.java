@@ -11,6 +11,7 @@ import play.db.ebean.*;
  * Computer entity managed by Ebean
  */
 @Entity
+@Table(uniqueConstraints=@UniqueConstraint(columnNames="username"))
 public class User extends Model {
 
     @Id
