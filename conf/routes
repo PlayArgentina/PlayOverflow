@@ -14,7 +14,7 @@ POST    /login                      controllers.Users.doLogin()
 POST    /logout                     controllers.Users.doLogout()
 
 # Questions controller
-GET     /question/                  controllers.Questions.showQuestion()
+GET     /question/:question          controllers.Questions.showQuestion(question:String)
 
 
 # Map static resources from the /public folder to the /assets URL path
