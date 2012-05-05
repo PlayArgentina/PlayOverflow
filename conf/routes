@@ -2,7 +2,7 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
+# Home page (list questions)
 GET     /                           controllers.Questions.index()
 
 # User login/signup page
@@ -12,6 +12,9 @@ POST    /signUp                     controllers.Users.doSignUp()
 GET     /login                      controllers.Users.login()
 POST    /login                      controllers.Users.doLogin()
 POST    /logout                     controllers.Users.doLogout()
+
+# Questions controller
+GET     /question/                  controllers.Questions.showQuestion()
 
 
 # Map static resources from the /public folder to the /assets URL path
