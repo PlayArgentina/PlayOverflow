@@ -55,8 +55,9 @@ public class Users extends Controller {
 	}
 
 	public static Result doLogout() {
-		// return ok(index.render("Users."));
-		return null;
+		flash("success", "You have logged out!");
+		session().remove("user_id");
+		return redirect("/");
 	}
 
 }
