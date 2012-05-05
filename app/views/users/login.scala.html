@@ -1,22 +1,23 @@
 @(userForm: Form[User])
 
 @import helper._
+@import helper.twitterBootstrap._
+
 
 @main("hola") {
     
     <h1>Login</h1>
     
-    @form(routes.Users.doLogin()) {
-        <fieldset>
-            @inputText(userForm("username"), '_label -> "User name")
-            @inputText(userForm("password"), '_label -> "User password")
-        </fieldset>
+    @form(routes.Users.doLogin(), 'class -> "well form-inline") {
         
+            @inputText(userForm("username"), 'class -> "input-small", '_label -> "User name")
+            @inputText(userForm("password"), 'class -> "input-small", '_label -> "User password")
+        
+    
         <div class="actions">
             <input type="submit" value="Login" class="btn primary"> or 
             <a href="@routes.Questions.index()" class="btn">Cancel</a> 
         </div>
-        
     }
     
 }
