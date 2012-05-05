@@ -2,18 +2,18 @@
 
 @import helper._
 
-@main("Sign up") {
+@main("hola") {
     
-    <h1>Sign up</h1>
+    <h1>Login</h1>
     
-    @form(routes.Users.doSignUp()) {
+    @form(routes.Users.doLogin()) {
         <fieldset>
             @inputText(userForm("username"), '_label -> "User name")
             @inputText(userForm("password"), '_label -> "User password")
         </fieldset>
         
         <div class="actions">
-            <input type="submit" value="Create User " class="btn primary"> or 
+            <input type="submit" value="Login" class="btn primary"> or 
             <a href="@routes.Application.index()" class="btn">Cancel</a> 
         </div>
         

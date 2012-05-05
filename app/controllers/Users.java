@@ -6,6 +6,10 @@ import play.mvc.*;
 
 public class Users extends Controller {
   private static Form<User> localForm = form(User.class);
+  
+	public static Result list() {
+		return ok(views.html.users.list.render(User.find.all()));
+	}
 
 	public static Result signUp() {
 		Form<User> userForm = localForm;
@@ -13,7 +17,7 @@ public class Users extends Controller {
 	}
 
 	public static Result doSignUp() {
-    Form<User> userForm = localForm.bindFromRequest();
+		Form<User> userForm = localForm.bindFromRequest();
         if(userForm.hasErrors()) {
             return badRequest(views.html.users.signup.render(userForm));
         }
@@ -23,11 +27,31 @@ public class Users extends Controller {
 	}
 
 	public static Result login() {
-		return null;
+		Form<User> userForm = localForm;
+		
+		return ok(views.html.users.login.render(userForm));
 	}
 
-	public static Result doLogin() {
-		return null;
+	public static Result doLogin() {		
+		Form<User> userForm = localForm.bindFromRequest();
+        if(userForm.hasErrors()) {
+            return badRequest(views.html.users.signup.render(userForm));
+        }
+        
+        User u = User.find.where().eq("username", userForm.get().username)
+        				 .eq("password", userForm.get().password).findUnique();
+
+        if (u != null) {
+        	flash("success", "You have logged in!");
+        	
+        	System.out.println("user login" + u.id);
+        	session().put("user_id", u.id.toString());
+        	
+        	return redirect("/");
+        } else {
+        	flash("error", "You have NOT logged in!");
+        	return redirect("/login");
+        }
 	}
 
 	public static Result doLogout() {

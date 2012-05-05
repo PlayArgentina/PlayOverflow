@@ -1,0 +1,11 @@
+@(userList: List[User])
+
+@import helper._
+
+@main("hola") {
+    
+   @for(user <- userList) {
+   	 @user.username	
+   }
+    
+}

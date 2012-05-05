@@ -6,6 +6,7 @@
 GET     /                           controllers.Application.index()
 
 # User login/signup page
+GET     /users                      controllers.Users.list()
 GET     /signUp                     controllers.Users.signUp()
 POST    /signUp                     controllers.Users.doSignUp()
 GET     /login                      controllers.Users.login()
