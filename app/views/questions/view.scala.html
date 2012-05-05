@@ -23,7 +23,9 @@
 </div>
 
    @for(answer <- question.answers) {
+   <button class="vote">Vote</button>
    @answer.votes
+   
    <div class='well' style="border-radius:10px;">
    <button class="close" data-dismiss="alert">×</button>
 	Posted by: <span class="label label-info">@answer.user.getUsername</span>
