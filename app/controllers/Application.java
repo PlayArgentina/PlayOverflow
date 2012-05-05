@@ -14,7 +14,7 @@ public class Application extends Controller {
 	/**
 	 * This result directly redirect to application home.
 	 */
-	public static Result GO_HOME = redirect(routes.Application.index());
+	public static Result GO_HOME = redirect(routes.Questions.index());
 
 	public static Result index() {
 		

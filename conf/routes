@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET     /                           controllers.Questions.index()
 
 # User login/signup page
 GET     /users                      controllers.Users.list()
