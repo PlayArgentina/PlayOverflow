@@ -26,9 +26,64 @@ public class Question extends Model {
 
     @Id
     public Long id;
-    private long user_id;
     
-    @Constraints.Required
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getTags() {
+		return tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+	}
+
+	public User getQuestionOwner() {
+		return questionOwner;
+	}
+
+	public void setQuestionOwner(User questionOwner) {
+		this.questionOwner = questionOwner;
+	}
+
+	public DateTime getPublish_date() {
+		return publish_date;
+	}
+
+	public void setPublish_date(DateTime publish_date) {
+		this.publish_date = publish_date;
+	}
+
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
+
+	@Constraints.Required
     public String description;
     public String title;
     public String tags;

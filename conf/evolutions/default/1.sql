@@ -29,7 +29,7 @@ create table user (
   constraint pk_users primary key (id))
 ;
 
-create sequence questions_seq start with 1000;
+create sequence question_seq start with 1000;
 
 create sequence user_seq start with 1000;
 
