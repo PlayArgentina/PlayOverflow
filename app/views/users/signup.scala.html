@@ -1,0 +1,22 @@
+@(userForm: Form[User])
+
+@import helper._
+
+@main("hola") {
+    
+    <h1>Sign up</h1>
+    
+    @form(routes.Users.doSignUp()) {
+        <fieldset>
+            @inputText(userForm("username"), '_label -> "User name")
+            @inputText(userForm("password"), '_label -> "User password")
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create User " class="btn primary"> or 
+            <a href="@routes.Application.index()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

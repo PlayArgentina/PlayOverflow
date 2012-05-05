@@ -1,7 +1,8 @@
 package models;
 
-
 import java.util.List;
+import java.util.*;
+import javax.persistence.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ public class User extends Model {
     @Constraints.Required
     public String password;
     
-    @ManyToOne
+    @OneToMany
     public List<Question> questions;
     
 //    /**
@@ -53,5 +54,4 @@ public class User extends Model {
 //    }
     
 }
-
 
