@@ -53,3 +53,4 @@ public class User extends Model {
     
 }
 
+>>>>>>> 78dc0faed937587ac3e2ca0c1c5f543be5f90b50
