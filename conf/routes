@@ -14,10 +14,13 @@ POST    /login                      controllers.Users.doLogin()
 POST    /logout                     controllers.Users.doLogout()
 
 # Questions controller
+
 GET     /question/new              controllers.Questions.newQuestion()
 GET     /question/:question        controllers.Questions.showQuestion(question:String)
 POST    /question/create           controllers.Questions.create()
 POST    /answerQuestion            controllers.Questions.answerQuestion()
+GET     /question/:question          controllers.Questions.showQuestion(question:String)
+GET    /voteAnswer/:answerId          	     controllers.Questions.voteAnswer(answerId:String)
 
 
 # Map static resources from the /public folder to the /assets URL path
