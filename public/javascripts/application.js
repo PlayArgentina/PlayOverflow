@@ -6,8 +6,8 @@ $(document).ready(function() {
     return false;
   });
   $(".js_vote").on("click", function() {
-	    $.get($(this).attr("href")), function () { 
+	    $.get($(this).attr("href"), function () { 
 	    	window.location.reload();
-	    }
+	    });
 	  });
 });
