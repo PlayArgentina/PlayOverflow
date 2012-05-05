@@ -1,14 +1,16 @@
 package models;
 
-import java.util.*;
-import javax.persistence.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-import play.db.ebean.*;
-import play.data.format.*;
-import play.data.validation.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-
-import com.avaje.ebean.*;
+import play.data.validation.Constraints;
+import play.db.ebean.Model;
 
 
 /**
@@ -45,4 +47,5 @@ public class Question extends Model {
     }
 
 }
+
 
