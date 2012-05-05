@@ -1,9 +1,29 @@
-@(question: Question)
+@(question: Question, answerForm:Form[Answer])
 
 @import helper._
 
 @main("View Question") {
-    
-  <p>@question.title</p>
+
+@question.title 
+@question.description
+@question.tags
+@question.publish_date
+@question.questionOwner.getUsername
+
+   @form(routes.Questions.answerQuestion(), 'class -> "well form-inline") {
+   
+   		@for(answer <- question.answers) {
+   			@answer.description
+   			@answer.user.getUsername
+   		}	
+   	
+         
+         <fieldset>
+            @textarea(answerForm("answer"), '_label -> "Type your answer", 'rows -> 3, 'cols -> 50)
+         </fieldset>
+        <div class="actions">
+            <input type="submit" value="Answer " class="btn primary"> 
+        </div>
+    }
     
 }
