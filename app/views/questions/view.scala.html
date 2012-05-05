@@ -22,7 +22,6 @@
 	
 </div>
 
-   
    @for(answer <- question.answers) {
    <div class='well' style="border-radius:10px;">
    <button class="close" data-dismiss="alert">×</button>
@@ -37,13 +36,18 @@
 <hr/>
 <hr/>
 <hr/>
-@form(routes.Questions.answerQuestion(), 'class -> "form-inline") {
-	@textarea(field = answerForm("answer"), args = 'cols -> 5, 'rows -> 4, '_label -> "Type your answer")
 
-    <div class="actions">
-        <input type="submit" value="Answer " class="btn btn-primary"> 
-       <input type="hidden" name="question.id" value="@question.id"></input>
-       <input type="hidden" name="user.id" value="@getCurrentUser().id"></input>
-    </div>
-
+    @if(getCurrentUser() != null) {      
+    @form(routes.Questions.answerQuestion(), 'class -> "form-inline") {
+        <fieldset>
+            @textarea(answerForm("description"), '_label -> "Type your answer", 'rows -> 5, 'cols -> 150)
+           <input type="hidden" name="question.id" value="@question.id"></input>
+           <input type="hidden" name="user.id" value="@getCurrentUser().id"></input>  
+         </fieldset>
+        <div class="actions">
+            <input type="submit" value="Answer " class="btn primary"> 
+        </div>
+       }
+    }
+    
 }
