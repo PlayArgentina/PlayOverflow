@@ -2,7 +2,7 @@
 
 # --- !Ups
 
-create table questions (
+create table question (
   id                        bigint not null,
   title                      varchar(255),
   description				 varchar(500),
@@ -12,7 +12,7 @@ create table questions (
   constraint pk_question primary key (id))
 ;
 
-create table users (
+create table user (
   id                        bigint not null,
   username                  varchar(255),
   password                	varchar(255),
@@ -21,19 +21,19 @@ create table users (
 
 create sequence questions_seq start with 1000;
 
-create sequence users_seq start with 1000;
+create sequence user_seq start with 1000;
 
-alter table questions add constraint fk_questions_users_1 foreign key (user_id) references users (id) on delete restrict on update restrict;
-create index ix_questions_users_1 on questions (user_id);
+alter table question add constraint fk_questions_user_1 foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_questions_user_1 on question (user_id);
 
 
 # --- !Downs
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
-drop table if exists questions;
+drop table if exists question;
 
-drop table if exists users;
+drop table if exists user;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 

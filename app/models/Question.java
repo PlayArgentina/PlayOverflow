@@ -21,7 +21,6 @@ import play.db.ebean.Model;
  * Company entity managed by Ebean
  */
 @Entity
-@Table(name = "questions")
 public class Question extends Model {
 
     @Id
@@ -32,8 +31,9 @@ public class Question extends Model {
     public String description;
     public String title;
     public String tags;
+    
     @ManyToOne(optional = false)
-      @JoinColumn(name = "user_id", referencedColumnName="id")
+    @JoinColumn(name = "user_id", referencedColumnName="id")
     public User questionOwner;
     @Formats.DateTime(pattern="yyyy-MM-dd")
     public Date publish_date;
