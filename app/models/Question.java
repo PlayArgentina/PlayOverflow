@@ -1,6 +1,7 @@
 package models;
 
-import java.util.Date;
+import org.joda.time.*;
+
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +37,7 @@ public class Question extends Model {
     @JoinColumn(name = "user_id", referencedColumnName="id")
     public User questionOwner;
     @Formats.DateTime(pattern="yyyy-MM-dd")
-    public Date publish_date;
+    public DateTime publish_date;
     @OneToMany(cascade = CascadeType.ALL)
     public List<Answer> answers;
     

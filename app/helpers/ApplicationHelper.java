@@ -1,6 +1,9 @@
 package helpers;
 
 import models.*;
+
+import org.joda.time.*;
+
 import play.cache.*;
 import controllers.*;
 
@@ -17,5 +20,14 @@ public class ApplicationHelper {
 			Cache.set("user_" + id, u);
 		}
 		return u;
+	}
+	
+	public static String time_ago_in_words(DateTime time) {
+		if (time == null) {
+			return "Unknown time ago";
+		}
+		DateTime now = DateTime.now();
+		Days d = Days.daysBetween(time, now);
+		return d.getDays() + " days ago";
 	}
 }

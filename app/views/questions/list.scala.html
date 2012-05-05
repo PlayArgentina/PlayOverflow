@@ -2,6 +2,8 @@
 
 @import helper._
 @import helper.twitterBootstrap._
+@import helpers.ApplicationHelper._
+
 
 @main("Question List") {
     
@@ -19,8 +21,12 @@
 	   		<tr>	 
 	   			<td>@question.answers.size()</td>
 	   			<td></td>
-	   			<td>@question.title</td>
-	   			<td>@question.description</td>
+	   			<td>
+            <a href="@routes.Questions.showQuestion(question.id.toString())">
+              @question.title
+            </a>
+          </td>
+	   			<td>@time_ago_in_words(question.publish_date)</td>
 			</tr> 
    }
     	</tbody>
