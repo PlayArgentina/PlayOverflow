@@ -17,6 +17,7 @@ create table answer (
   description               varchar(2000),
   user_id                   bigint not null,
   question_id				bigint not null,
+  votes						bigint default 0,
   constraint pk_answer primary key (id))
 ;
 

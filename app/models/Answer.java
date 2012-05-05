@@ -25,6 +25,8 @@ public class Answer extends Model{
 	@JoinColumn(name = "user_id", referencedColumnName="id")
 	public User user;
 	
+	public Long votes;
+	
 	public static Model.Finder<Long,Answer> find = new Model.Finder<Long,Answer>(Long.class, Answer.class);
     
 	

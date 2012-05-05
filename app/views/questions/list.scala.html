@@ -11,7 +11,6 @@
 	   	 <thead>
 			<tr>
 				<td>Answers</td>
-				<td>View</td>
 				<td>Title</td>
 				<td>Posted</td>
 			</tr>
@@ -20,7 +19,6 @@
    @for(question <- questionList) {
 	   		<tr>	 
 	   			<td><span class="badge">@question.answers.size()</span></td>
-	   			<td></td>
 	   			<td>
             <a href="@routes.Questions.showQuestion(question.id.toString())">
               @question.title
