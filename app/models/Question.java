@@ -2,12 +2,14 @@ package models;
 
 import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import play.data.format.Formats;
@@ -35,6 +37,9 @@ public class Question extends Model {
     public User questionOwner;
     @Formats.DateTime(pattern="yyyy-MM-dd")
     public Date publish_date;
+    @OneToMany
+    public List<Answer> answers;
+    
     
     /**
      * Generic query helper for entity Company with id Long
