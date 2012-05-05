@@ -1,6 +1,7 @@
 @(question: Question, answerForm:Form[Answer])
 
 @import helper._
+@import helpers.ApplicationHelper._
 @import helper.twitterBootstrap._
 
 @main("View Question") {
@@ -9,7 +10,7 @@
 @question.description
 @question.tags
 @question.publish_date
-@question.questionOwner.getUsername
+@question.questionOwner.getUsername()
 
    @form(routes.Questions.answerQuestion(), 'class -> "well form-inline") {
    
@@ -20,7 +21,9 @@
    	
          
          <fieldset>
-            @textarea(answerForm("answer"), '_label -> "Type your answer", 'rows -> 3, 'cols -> 50)
+            @textarea(answerForm("description"), '_label -> "Type your answer", 'rows -> 5, 'cols -> 150)
+           <input type="hidden" name="question.id" value="@question.id"></input>
+           <input type="hidden" name="user.id" value="@getCurrentUser().id"></input>  
          </fieldset>
         <div class="actions">
             <input type="submit" value="Answer " class="btn primary"> 

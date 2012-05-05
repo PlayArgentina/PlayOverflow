@@ -2,10 +2,14 @@ package controllers;
 
 import models.Answer;
 import models.Question;
+import models.User;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 
 public class Questions extends Controller {
+	
+	private static Form<Answer> localForm = form(Answer.class);
 
 	public static Result index() {
 		return ok(views.html.questions.list.render(Question.find.all()));
@@ -24,7 +28,12 @@ public class Questions extends Controller {
 	}
 	
 	public static Result answerQuestion() {
-		return null;
+		Form<Answer> answeForm = localForm.bindFromRequest();
+		if (answeForm.hasErrors())
+			 return badRequest(views.html.index.render("Hola"));
+		
+		answeForm.get().save();
+		return redirect(routes.Questions.showQuestion(answeForm.get().question.id.toString()));
 	}
 	
 	
