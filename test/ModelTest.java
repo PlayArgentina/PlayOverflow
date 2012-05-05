@@ -26,7 +26,6 @@ public class ModelTest {
            }
         });
     }
-
     @Test
     public void findAnswer(){
     	running(fakeApplication(), new Runnable(){
