@@ -7,37 +7,37 @@ create table questions (
   title                      varchar(255),
   description				 varchar(500),
   tags						 varchar(500),
-  constraint pk_company primary key (id))
+  publish_date				 timestamp,
+  user_id					bigint not null,
+  constraint pk_question primary key (id))
 ;
 
-create table computer (
+create table users (
   id                        bigint not null,
-  name                      varchar(255),
-  introduced                timestamp,
-  discontinued              timestamp,
-  company_id                bigint,
-  constraint pk_computer primary key (id))
+  username                      varchar(255),
+  password                timestamp,
+  constraint pk_users primary key (id))
 ;
 
-create sequence company_seq start with 1000;
+create sequence questions_seq start with 1000;
 
-create sequence computer_seq start with 1000;
+create sequence users_seq start with 1000;
 
-alter table computer add constraint fk_computer_company_1 foreign key (company_id) references company (id) on delete restrict on update restrict;
-create index ix_computer_company_1 on computer (company_id);
+alter table questions add constraint fk_questions_users_1 foreign key (user_id) references users (id) on delete restrict on update restrict;
+create index ix_questions_users_1 on questions (user_id);
 
 
 # --- !Downs
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
-drop table if exists company;
+drop table if exists questions;
 
-drop table if exists computer;
+drop table if exists users;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 
-drop sequence if exists company_seq;
+drop sequence if exists questions_seq;
 
-drop sequence if exists computer_seq;
+drop sequence if exists users_seq;
 

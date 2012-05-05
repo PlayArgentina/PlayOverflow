@@ -1,5 +1,6 @@
 package models;
 
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import play.data.format.Formats;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
@@ -22,7 +24,7 @@ public class Question extends Model {
 
     @Id
     public Long id;
-    private long userId;
+    private long user_id;
     
     @Constraints.Required
     public String description;
@@ -31,7 +33,8 @@ public class Question extends Model {
     @ManyToOne(optional = false)
       @JoinColumn(name = "userId", referencedColumnName="id")
     public User questionOwner;
-    
+    @Formats.DateTime(pattern="yyyy-MM-dd")
+    public Date publish_date;
     
     /**
      * Generic query helper for entity Company with id Long
