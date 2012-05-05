@@ -40,7 +40,7 @@
     @if(getCurrentUser() != null) {      
     @form(routes.Questions.answerQuestion(), 'class -> "form-inline") {
         <fieldset>
-            @textarea(answerForm("description"), '_label -> "Type your answer", 'rows -> 5, 'cols -> 150)
+            @textarea(answerForm("description"), '_label -> "Type your answer", 'rows -> 5, 'cols -> 150, 'style -> "width: 100%")
            <input type="hidden" name="question.id" value="@question.id"></input>
            <input type="hidden" name="user.id" value="@getCurrentUser().id"></input>  
          </fieldset>
