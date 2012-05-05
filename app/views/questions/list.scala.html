@@ -27,6 +27,11 @@
 	   			<td>@time_ago_in_words(question.publish_date)</td>
 			</tr> 
    }
+
+   @if(getCurrentUser() != null) {
+
+   <a href="/question/new" class="btn">Create new question</a>
+  }
     	</tbody>
    	 </table>
     

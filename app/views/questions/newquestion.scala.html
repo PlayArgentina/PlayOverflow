@@ -4,11 +4,11 @@
 @import helper.twitterBootstrap._
 @import helpers.ApplicationHelper._
 
-
 @main("Questions") {
     <h1>Create Question</h1>
     @form(routes.Questions.create(), 'class -> "well form-inline") {
-            @inputText(questionForm("description"), '_label -> "Question name")
+            @inputText(questionForm("title"), '_label -> "Question title")
+            @inputText(questionForm("description"), '_label -> "Question description")
             <input type="hidden" value="@getCurrentUser().id.toString()" name="questionOwner.id"/>
         <div class="actions">
             <input type="submit" value="Create Question" class="btn primary"> or 
