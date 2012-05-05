@@ -1,18 +1,14 @@
 package models;
 
-<<<<<<< HEAD
-public class User {
 
-}
-=======
-import java.util.*;
-import javax.persistence.*;
+import java.util.List;
 
-import play.db.ebean.*;
-import play.data.format.*;
-import play.data.validation.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-import com.avaje.ebean.*;
+import play.data.validation.Constraints;
+import play.db.ebean.Model;
 
 /**
  * Computer entity managed by Ebean
@@ -58,4 +54,4 @@ public class User extends Model {
     
 }
 
->>>>>>> 78dc0faed937587ac3e2ca0c1c5f543be5f90b50
+
