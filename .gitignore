@@ -4,6 +4,8 @@ project/target
 target
 tmp
 .history
+.cache
+.DS_Store
 dist
 .classpath
 .project
