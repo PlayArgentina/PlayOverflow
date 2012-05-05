@@ -5,5 +5,12 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+# Login page
+GET     /login                      controllers.Users.login()
+POST    /login                      controllers.Users.doLogin()
+GET     /logout                     controllers.Users.logout()
+POST    /logout                     controllers.Users.doLogout()
+
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

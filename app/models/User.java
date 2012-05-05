@@ -24,7 +24,7 @@ public class User extends Model {
     @Constraints.Required
     public String password;
     
-    @ManyToOne
+    @OneToMany
     public List<Question> questions;
     
 //    /**
