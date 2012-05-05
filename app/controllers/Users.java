@@ -44,7 +44,6 @@ public class Users extends Controller {
         if (u != null) {
         	flash("success", "You have logged in!");
         	
-        	System.out.println("user login" + u.id);
         	session().put("user_id", u.id.toString());
         	
         	return redirect("/");

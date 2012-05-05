@@ -1,0 +1,28 @@
+@(questionList: List[Question])
+
+@import helper._
+
+@main("Question List") {
+    
+    <table class="table table-condensed">
+	   	 <thead>
+			<tr>
+				<td>Answers</td>
+				<td>View</td>
+				<td>Title</td>
+				<td>Posted</td>
+			</tr>
+	   	 </thead>
+	   	 <tbody>
+   @for(question <- questionList) {
+	   		<tr>	 
+	   			<td>@question.answer.size()</td>
+	   			<td></td>
+	   			<td>@question.answer.title</td>
+	   			<td>@question.answer.description</td>
+			</tr> 
+   }
+    	</tbody>
+   	 </table>
+    
+}
